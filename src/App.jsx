@@ -1,5 +1,20 @@
+import NetflixSeries, { Header, Footer } from "./component/NetflixSeries";  // --> works when we export while starting the component
+// import { NetflixSeries, Footer } from "./component/NetflixSeries";  // --> works when we export while starting the component
+// import NetflixSeries from "./component/NetflixSeries"; //--> works when export default NetflixSeries; written in last
 export const App = () => {
 
-    return <h1>Hi, I'm Pankaj Maurya</h1>
+    return (
+        <>
+            <div>
+                < Header />
+                < NetflixSeries />
+                < NetflixSeries />
+                < NetflixSeries />
+                < NetflixSeries />
+                < NetflixSeries />
+                <Footer />
+            </div>
+        </>
+    );
 
 };
