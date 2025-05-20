@@ -1,4 +1,5 @@
 import seriesData from "../api/seriesData.json";
+
 import { SeriesCard } from "./SeriesCard";
 
 export const NetflixSeries = () => {
@@ -7,8 +8,7 @@ export const NetflixSeries = () => {
         <ul>
             {
                 seriesData.map((currElem) => {
-                    return (<SeriesCard key={currElem.id} currElem={currElem} />
-                    )
+                    return (<SeriesCard key={currElem.id} data={currElem} />)
                 })
             }
         </ul>
