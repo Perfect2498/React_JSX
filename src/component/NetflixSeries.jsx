@@ -1,60 +1,27 @@
-const NetflixSeries = () => {
-    let name = "Prince of Persia";
+import seriesData from "../api/seriesData.json";
 
-    let rating = 8.6;
-
-    let summary = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere modi soluta, quis temporibus praesentium fuga aliquid sunt maiores,minus aperiam mollitia. Eos sint neque provident sequi obcaecati dicta voluptates atque, vitae qui quo, quis ea vel temporibus. Alias corporis accusantium dolor hic, molestias laboriosam ratione saepe incidunt, non numquam consequuntur";
-    let age = 19;
-
-    const canWatch = () => {
-        if (age >= 18) return "Watch Now";
-        return "Not Available";
-    };
-
-    const returnGenre = () => {
-        let genre = "Action";
-        return genre;
-    };
+export const NetflixSeries = () => {
 
     return (
-        <>
-            <div>
-                <img src="PrinceOfPersia.jpg" alt="PrinceOfPersia" width="40%" height="50%" />
-            </div>
-            <h2>Name: {name} </h2>
-            <h3>Rating: {rating}</h3>
-            <p>Summary: {summary}</p>
-            <p>Genre: {returnGenre()}</p>
-            {/* <button>{age >=18 ? "Watch Now" : "Not Available"}</button> */}
-            <button>{canWatch()}</button>
-        </>
+        <ul>
+            {
+                seriesData.map((currElem) => {
+                    return (
+                        <li key={currElem.id}>
+                            <div>
+                                <img src={currElem.img_url} alt={currElem.name} width="40%" height="50%" />
+                            </div>
+                            <h2>Name: {currElem.name} </h2>
+                            <h3>Rating: {currElem.rating}</h3>
+                            <p>Description: {currElem.description}</p>
+                            <p>Genre: {currElem.genre}</p>
+                            <p>Cast: {currElem.cast}</p>
+
+                            <button><a href={currElem.watch_url} target="_blank">Watch Now</a></button>
+                        </li>
+                    );
+                })
+            }
+        </ul>
     );
 };
-
-export const Header = () => {
-
-    return <h4>All Copyright Reserverd for 2025 @Maurya</h4>
-};
-
-export const Footer = () => {
-
-    return <h4>All Copyright Reserverd for 2025 @Maurya</h4>
-};
-
-export default NetflixSeries;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export default NetflixSeries;
-// export default Footer;
