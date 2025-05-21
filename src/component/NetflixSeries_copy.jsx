@@ -33,7 +33,7 @@ const NetflixSeries = () => {
 
 export const Header = () => {
 
-    return <h4>All Copyright Reserverd for 2025 @Maurya</h4>
+    return <h4>Header @Maurya</h4>
 };
 
 export const Footer = () => {
@@ -42,19 +42,6 @@ export const Footer = () => {
 };
 
 export default NetflixSeries;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // export default NetflixSeries;
 // export default Footer;
