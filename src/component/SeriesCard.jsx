@@ -1,3 +1,5 @@
+import styles from "./Netflix.module.css";
+
 export const SeriesCard = ({ data }) => {
     // console.log(props);
 
@@ -14,21 +16,21 @@ export const SeriesCard = ({ data }) => {
         cursor: "pointer"
     };
 
-    const ratingClass = (rating >= 8.5) ? "super_hit" : "average" ;
+    const ratingClass = (rating >= 8.5) ? styles.super_hit : styles.average;
 
     return (
-        <li className="card">
+        <li className={styles.card}>
             <div>
                 <img src={img_url} alt={name} width="40%" height="50%" />
             </div>
-            <div className="card-content" style={{ margin: "1.2rem 0" }}>
+            <div className={styles["card-content"]} style={{ margin: "1.2rem 0" }}>
                 <h2>Name: {name} </h2>
                 {/* <h3>
                     Rating: <span className={ `rating ${rating >= 8.5 ? "super_hit" : "average"}`}> 
                         {rating} </span>
                 </h3> */}
                 <h3>
-                    Rating: <span className={ `rating  ${ratingClass}`}> 
+                    Rating: <span className={ `${styles.rating}  ${ratingClass}`}> 
                         {rating} </span>
                 </h3>
                 <p >Description: {description}</p>
